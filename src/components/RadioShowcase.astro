@@ -15,7 +15,7 @@ const APP_URL = 'https://listenradioverse.com';
 
 <figure class="m-0">
   <a
-    class="panel"
+    class="shot-link panel"
     href={APP_URL}
     target="_blank"
     rel="noopener"
@@ -38,9 +38,9 @@ const APP_URL = 'https://listenradioverse.com';
         fetchpriority="high"
         class="img"
       />
-      <span class="veil" aria-hidden="true"></span>
-      <span class="cta" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+      <span class="shot-veil" aria-hidden="true"></span>
+      <span class="shot-cta" aria-hidden="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
         Listen live
       </span>
     </span>
@@ -53,20 +53,9 @@ const APP_URL = 'https://listenradioverse.com';
 
 <style>
   .panel {
-    display: block;
     border-radius: 12px;
-    overflow: hidden;
     background: var(--pitch);
     box-shadow: var(--lift-lg);
-    text-decoration: none;
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s ease;
-  }
-
-  .panel:hover,
-  .panel:focus-visible {
-    transform: translateY(-3px);
   }
 
   /* ------------------------------------------------------------ chrome */
@@ -131,61 +120,6 @@ const APP_URL = 'https://listenradioverse.com';
     height: auto;
   }
 
-  /* Darkens on hover so the call to action reads without hiding the app. */
-  .veil {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-      60% 60% at 50% 50%,
-      rgba(18, 15, 22, 0.55),
-      rgba(18, 15, 22, 0.78)
-    );
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
-
-  .cta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    padding: 0.7rem 1.35rem;
-    border-radius: 999px;
-    background: var(--amber-bright);
-    color: #1a1119;
-    font-family: var(--display);
-    font-weight: 900;
-    font-size: 0.75rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.94);
-    transition:
-      opacity 0.35s ease,
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.7);
-  }
-
-  .cta svg {
-    width: 0.95rem;
-    height: 0.95rem;
-    fill: currentColor;
-  }
-
-  .panel:hover .veil,
-  .panel:focus-visible .veil {
-    opacity: 1;
-  }
-
-  .panel:hover .cta,
-  .panel:focus-visible .cta {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
   .cap {
     margin: 1rem 0 0;
     text-align: center;
@@ -197,28 +131,4 @@ const APP_URL = 'https://listenradioverse.com';
     color: var(--faint);
   }
 
-  /* Touch devices never hover — keep the CTA permanently visible instead. */
-  @media (hover: none) {
-    .cta {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-      font-size: 0.68rem;
-      padding: 0.55rem 1rem;
-    }
-    .veil {
-      opacity: 0.55;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .panel,
-    .veil,
-    .cta {
-      transition: none;
-    }
-    .panel:hover,
-    .panel:focus-visible {
-      transform: none;
-    }
-  }
 </style>
