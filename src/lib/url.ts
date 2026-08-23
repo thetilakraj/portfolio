@@ -1,12 +1,12 @@
 /**
  * Build a URL that respects the configured `base` path.
  *
- * The site is served from https://thetilakraj.github.io/MyPortfolio/, so a bare
+ * The site is served from https://thetilakraj.github.io/portfolio/, so a bare
  * "/about" would 404. Every internal href and asset path must go through here.
  *
- *   url()                  -> "/MyPortfolio/"
- *   url('/work')           -> "/MyPortfolio/work"
- *   url('resume.pdf')      -> "/MyPortfolio/resume.pdf"
+ *   url()                  -> "/portfolio/"
+ *   url('/work')           -> "/portfolio/work"
+ *   url('resume.pdf')      -> "/portfolio/resume.pdf"
  */
 const BASE = import.meta.env.BASE_URL.replace(/\/+$/, '');
 

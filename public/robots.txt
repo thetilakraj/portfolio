@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thetilakraj.github.io/MyPortfolio/sitemap-index.xml
+Sitemap: https://thetilakraj.github.io/portfolio/sitemap-index.xml
