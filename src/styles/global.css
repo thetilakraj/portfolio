@@ -6,7 +6,7 @@
    The palette is carried forward from the original site and taken seriously
    rather than treated as template residue:
 
-     #605768  the mauve that headed every section  → --plum, the brand colour
+     #5d5465  the mauve that headed every section  → --plum, the brand colour
      #d2c9d3  the lavender content panel           → --panel
      #717981  the body grey                        → warmed toward plum
 
@@ -40,7 +40,7 @@
   --pitch-rule: #3d3545;
 
   --ink: #2e2734;        /* 10.9:1 on paper */
-  --plum: #605768;       /*  5.2:1 — the brand mauve, unchanged */
+  --plum: #5d5465;       /*  4.6:1 on panel; 5.4:1 on surface */
   --muted: #5f576a;      /*  5.2:1 — was #6e6675, which fell under AA
                                 on the deeper ground */
   --faint: #665d73;      /*  4.7:1 — was #948ca0 at 2.7:1, which failed AA
