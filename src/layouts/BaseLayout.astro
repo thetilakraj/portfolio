@@ -31,8 +31,11 @@ const ogImage = new URL(url(image ?? '/og-default.png'), Astro.site).href;
     <link rel="icon" href={url('/favicon.ico')} sizes="any" />
     <meta name="theme-color" content="#efebf1" />
 
-    <Font cssVariable="--font-merriweather" preload />
+    <!-- Preload only Source Sans, which renders the H1. Merriweather ships in
+         one reading weight and can load after first paint without competing
+         with the hero image. -->
     <Font cssVariable="--font-source" preload />
+    <Font cssVariable="--font-merriweather" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Tilak Raj" />
