@@ -15,6 +15,12 @@ export default defineConfig({
   trailingSlash: 'ignore',
   integrations: [mdx(), sitemap()],
 
+  build: {
+    // The page CSS gzips to ~7kB. Inlining it removes one render-blocking
+    // round trip on the critical path, which is what FCP was waiting on.
+    inlineStylesheets: 'always',
+  },
+
   // Merriweather + Source Sans carried over from the original site. Downloaded
   // and self-hosted at build time — no Google Fonts request at runtime.
   fonts: [
@@ -22,17 +28,17 @@ export default defineConfig({
       provider: fontProviders.google(),
       name: 'Merriweather',
       cssVariable: '--font-merriweather',
-      weights: [300],
+      weights: [300, 700],
       styles: ['normal'],
       subsets: ['latin'],
       fallbacks: ['Georgia', 'serif'],
-      display: 'optional',
+      display: 'swap',
     },
     {
       provider: fontProviders.google(),
       name: 'Source Sans 3',
       cssVariable: '--font-source',
-      weights: [400, 600, 900],
+      weights: [600, 900],
       styles: ['normal'],
       subsets: ['latin'],
       fallbacks: ['Helvetica Neue', 'Helvetica', 'sans-serif'],
