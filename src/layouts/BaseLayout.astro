@@ -32,8 +32,9 @@ const ogImage = new URL(url(image ?? '/og-default.png'), Astro.site).href;
     <meta name="theme-color" content="#efebf1" />
 
     <!-- Preload only Source Sans, which renders the H1. Merriweather ships in
-         one reading weight and can load after first paint without competing
-         with the hero image. -->
+         one reading weight with `font-display: optional`, so a slow first
+         visit keeps Astro's metric-adjusted fallback instead of repainting
+         after first render and inflating Speed Index. -->
     <Font cssVariable="--font-source" preload />
     <Font cssVariable="--font-merriweather" />
 

@@ -26,6 +26,7 @@ export default defineConfig({
       styles: ['normal'],
       subsets: ['latin'],
       fallbacks: ['Georgia', 'serif'],
+      display: 'optional',
     },
     {
       provider: fontProviders.google(),
